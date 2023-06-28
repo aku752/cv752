@@ -1,0 +1,330 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block titulo %}
+    Hoja de vida
+{% endblock titulo %}
+{% block perfil %}
+   
+    {% for usuario in usuarios %}
+        <h3>{{ usuario.nombre }}</h3>
+        </h4>{{ usuario.profesion }}</h4>
+    {% endfor %}
+{% endblock perfil %}
+
+{% block descargar %}
+    {% for usuario in usuarios %}
+        <a href="{{ usuario.curriculum }}" target="_blank" class="btn btn-primary">Descargar CV</a>
+    {% endfor %}
+{% endblock descargar %}
+
+{% block portada %}
+    {% for usuario in usuarios %}
+        <h2>{{ usuario.nombre }}</h2>
+        <div class="owl-carousel text-rotation owl-loaded owl-drag">      
+                <div class="owl-stage-outer">
+                <div class="owl-stage" style="transform: translate3d(-1500px, 0px, 0px); transition: all 0s ease 0s; width: 4500px;">
+                    
+                    <div class="owl-item cloned" style="width: 750px;">
+                    <div class="item">
+                    <div class="sp-subtitle"></div>
+                    </div>
+                    </div>                               
+
+                    <div class="owl-item active" style="width: 750px;">
+                    <div class="item">
+                        <div class="sp-subtitle"></div>
+                    </div>
+                    </div>                                  
+
+                    <div class="owl-item cloned" style="width: 750px;">
+                    <div class="item">
+                        <div class="sp-subtitle">{{ usuario.profesion }}</div>
+                    </div>
+                    </div>
+
+                </div>
+                </div>
+
+            <div class="owl-nav disabled"><div class="owl-prev">prev</div><div class="owl-next">next</div></div><div class="owl-dots disabled"></div></div>
+        </div>
+        
+    {% endfor %}  
+{% endblock portada %}
+
+
+{% block profesion %}
+    {% for usuario in usuarios %}
+        <h2>{{ usuario.profesion }}</h2>
+    {% endfor %} 
+{% endblock profesion %}
+
+{% block educacion %}    
+    {% for educacion in educaciones %}
+    <div class="timeline-item clearfix">        
+            <div class="left-part">
+                <h5 class="item-period">{{ educacion.epoca }}</h5>
+                <span class="item-company">{{ educacion.colegio }}</span>
+            </div>
+            <div class="divider"></div>
+            <div class="right-part">
+                <h4 class="item-title">{{ educacion.educacion }}</h4>
+                <p>{{ educacion.descripcion }}</p>
+            </div>
+        </div>
+      
+    {% endfor %}
+{% endblock educacion %}
+{% block habilidad %}
+   {% for habilidad in habilidades %}
+        <div class="skill clearfix">
+            <h4>{{ habilidad.habilidad }}</h4>
+            <div class="skill-value">{{ habilidad.nivel }}%</div>
+        </div>
+        <div class="skill-container skill-1">
+            <div class="skill-percentage" style="width: {{ habilidad.nivel }}%" ></div>
+        </div>
+    {% endfor habilidad %} 
+                        
+ 
+{% endblock habilidad %} 
+{% block lenguajes %}
+    {% for lenguaje in lenguajes %}
+        <div class="skill clearfix">
+            <h4>{{ lenguaje.lenguaje }}</h4>
+            <div class="skill-value">{{ lenguaje.nivel }}%</div>
+        </div>
+        <div class="skill-container skill-5">
+            <div class="skill-percentage" style="width: {{ lenguaje.nivel }}%"></div>
+        </div>
+    {% endfor lenguajes %}
+{% endblock lenguajes %}
+
+{% block experiencia %}
+    {% for experiencia in experiencias %}
+        <div class="timeline-item clearfix">
+            <div class="left-part">
+                <h5 class="item-period">{{ experiencia.epoca }}</h5>
+                <span class="item-company">{{ experiencia.lugar }}</span>
+            </div>
+            <div class="divider"></div>
+            <div class="right-part">
+                <h4 class="item-title">{{ experiencia.cargo }}</h4>
+                <p>{{ experiencia.descripcion }}</p>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock experiencia %}
+
+{% block conocimiento %}
+    {% for conocimiento in conocimientos %}
+       
+            <li>{{ conocimiento.conocimiento }}</li>
+
+    {% endfor conocimiento %}
+{% endblock conocimiento %}
+
+{% block certificados %}
+    {% for certificado in certificados %}
+        <div class="col-xs-12 col-sm-6">
+            <div class="certificate-item clearfix">
+            <div class="certi-logo">
+                {% comment %} <img src="images/client-1.png" alt="logo"> {% endcomment %}
+                <img src="{{ certificado.imagen.url }}" alt="logo">
+            </div>
+            
+            <div class="certi-content">
+                <div class="certi-title">
+                <h4>{{ certificado.certificado }}</h4>
+                </div>
+                <div class="certi-id">
+                <span>{{ certificado.descripcion }}</span>
+                </div>
+                <div class="certi-date">
+                <span>{{ certificado.epoca }}</span>
+                </div>
+                <div class="certi-company">
+                <span></span>
+                </div>
+            </div>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock certificados %}
+{% block acerca %}
+    {% for acerca in acercas %}
+        <p>{{ acerca.acerca }}</p>
+    {% endfor %}
+
+{% endblock acerca %}
+{% block informacion %}
+    {% for usuario in usuarios %}    
+        <li>
+        <span class="title">Pais</span>
+        <span class="value">{{ usuario.pais }}</span>
+        </li>
+
+        <li>
+        <span class="title">Ciudad</span>
+        <span class="value">{{ usuario.ciudad }}</span>
+        </li>     
+
+        <li>
+        <span class="title">e-mail</span>
+        <span class="value">{{ usuario.correo }}</span>
+        </li>
+
+        <li>
+        <span class="title">Telefono</span>
+        <span class="value">{{ usuario.telefono }}</span>
+        </li>
+    {% endfor %}
+{% endblock informacion %}
+{% block contacto %}
+    {% for usuario in usuarios %}
+        <div class="lm-info-block gray-default">
+            <i class="lnr lnr-map-marker"></i>
+            <h4>{{ usuario.ciudad }} - {{ usuario.pais }}</h4>
+            <span class="lm-info-block-value"></span>
+            <span class="lm-info-block-text"></span>
+        </div>
+
+        <div class="lm-info-block gray-default">
+            <i class="lnr lnr-phone-handset"></i>
+            <h4>{{ usuario.telefono}}</h4>
+            <span class="lm-info-block-value"></span>
+            <span class="lm-info-block-text"></span>
+        </div>
+
+        <div class="lm-info-block gray-default">
+            <i class="lnr lnr-envelope"></i>
+            <h4>{{ usuario.correo }}</h4>
+            <span class="lm-info-block-value"></span>
+            <span class="lm-info-block-text"></span>
+        </div>
+
+        <div class="lm-info-block gray-default">
+            <i class="lnr lnr-checkmark-circle"></i>
+            {% if usuario.estado %}
+                <h4>Disponible</h4>
+            {% endif %}
+            <span class="lm-info-block-value"></span>
+            <span class="lm-info-block-text"></span>
+        </div>
+    {% endfor %}
+{% endblock contacto %}
+
+{% block trabajos %}
+<div class="row">
+    <div class="col-xs-12 col-sm-6">
+        <div class="col-inner">
+            <div class="info-list-w-icon">
+            <div class="info-block-w-icon">
+                <div class="ci-icon">
+                <i class="lnr lnr-store"></i>
+                </div>
+                <div class="ci-text">
+                
+                <h4>{{ trabajo1.trabajo }}</h4>
+                <p>{{ trabajo1.descripcion }}</p>
+            
+            </div>
+            </div>
+            <div class="info-block-w-icon">
+                <div class="ci-icon">
+                <i class="lnr lnr-laptop-phone"></i>
+                </div><div class="ci-text">                              
+                <h4>{{ trabajo0.trabajo }}</h4>
+                <p>{{ trabajo0.descripcion }}</p></div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+        <div class="col-inner">
+            <div class="info-list-w-icon">
+            <div class="info-block-w-icon">
+                <div class="ci-icon">
+                <i class="lnr lnr-pencil"></i>
+                </div>
+                <div class="ci-text">
+                <h4>{{ trabajo2.trabajo }}</h4>
+                <p>{{ trabajo2.descripcion }}</p>
+                </div>
+            </div>
+            <div class="info-block-w-icon">
+                <div class="ci-icon">
+                <i class="lnr lnr-flag"></i>
+                </div><div class="ci-text">
+                <h4>{{ trabajo3.trabajo }}</h4>
+                <p>{{ trabajo3.descripcion }}</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock trabajos %}
+{% block formulario_contacto %}
+        
+        <form action="" method="POST" novalidate="true">
+            {% csrf_token %}
+
+            <div class="messages"></div>            
+            <div class="controls two-columns">
+            <div class="fields clearfix">
+                <div class="left-column">
+                <div class="form-group form-group-with-icon">
+                    <input id="form_name" type="text" name="nombre" class="form-control" placeholder="" required="required" data-error="Nombre requerido.">
+                    <label>Nombre</label>
+                    <div class="form-control-border"></div>
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group form-group-with-icon">
+                    <input id="form_subject" type="text" name="asunto" class="form-control" placeholder="" required="required" data-error="Asunto es requerido.">
+                    <label>Asunto</label>
+                    <div class="form-control-border"></div>
+                    <div class="help-block with-errors"></div>
+                </div>
+                </div>
+                <div class="right-column">
+                <div class="form-group form-group-with-icon">
+                    <textarea id="form_message" name="mensaje" class="form-control" placeholder="" rows="7" required="required" data-error="Porfavor ingresa un Mensaje"></textarea>
+                    <label>Mensaje</label>
+                    <div class="form-control-border"></div>
+                    <div class="help-block with-errors"></div>
+                </div>
+                   {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-success">{{ message }}<button type="button" class="close" data-dismiss="alert">X</button></div>
+                            
+                        {% endfor %}   
+                    {% endif %} 
+                </div>
+                
+            </div>    
+                           
+            <input type="submit" class="button btn-send disabled" value="Enviar mensaje">
+            
+        
+            </div>
+            
+
+        </form>    
+{% endblock formulario_contacto%}
+{% block portafolio %}
+    {% for portafolio in portafolios %}
+        <figure class="item lbaudio shuffle-item filtered" style="position: absolute; top: 0px; left: 0px; visibility: visible; transition: transform 450ms ease-out 0s, opacity 450ms ease-out 0s;">
+            <div class="portfolio-item-img">
+                <img src="{{ portafolio.imagen.url }}" alt="SoundCloud Audio" title="">
+                <a href="{{ portafolio.ruta }}" class="lightbox mfp-iframe" title="Websonline"></a>
+            </div>
+
+            <i class="fa fa-volume-up"></i>
+            <h4 class="name">{{ portafolio.portafolio }}</h4>
+            <span class="category">{{ portafolio.tipo }}</span>
+        </figure>
+    {% endfor %}
+{% endblock portafolio %}

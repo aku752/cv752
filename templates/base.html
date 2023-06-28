@@ -1,0 +1,764 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en" class=" js no-touch cssanimations csstransforms csstransforms3d csstransitions js no-touch cssanimations csstransforms csstransforms3d csstransitions" style=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">     
+    <title>{% block titulo %}CURRICULUM{% endblock titulo %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Curriculum Resumen / CV / Template">
+    <meta name="keywords" content="vcard, responsive, retina, resume, jquery, css3, bootstrap, Material CV, portfolio">
+    <!--<meta name="author" content="lmpixels"> -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+
+
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/animations.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/perfect-scrollbar.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css">
+  
+    <link rel="stylesheet" href="{% static 'css/icon-font.min.css' %}">
+
+    <!--<script type="text/javascript" async="" src="css/recaptcha__es_419.js" crossorigin="anonymous" integrity="sha384-p9atCUrxd8Jn0zYOmSvK8rVx7Y3dTzUy+VAabc/xRwyJLI00suaABVeetWJPVuvG"></script><script src="js/modernizr.custom.js"></script>
+    <script src="js/sw10.js"></script>-->
+    <!--<iframe name="iframe38387" src="ga.html" style="width: 1px; height: 1px;"></iframe></head>-->
+    <!-- BLOQUES INDEX
+        - titulo
+        - perfil
+        - nombre-->
+  <body>
+    <!-- Animated Background -->
+    <div class="lm-animated-bg" style="background-image: url(&quot;{% static 'images/main_bg.png' %}&quot;); background-position: calc(50% + -0.38145px) calc(50% + 1.56615px);"></div>
+    <!-- /Animated Background -->
+
+    <!-- Loading animation -->
+    <div class="preloader" style="display: none;">
+      <div class="preloader-animation">
+        <div class="preloader-spinner">
+        </div>
+      </div>
+    </div>
+    <!-- /Loading animation -->
+
+    <div class="page">
+      <div class="page-content">
+
+          <header id="site_header" class="header mobile-menu-hide">
+            <div class="header-content">
+              <div class="header-photo">
+                <img src="{% static 'images/main_photo.jpg' %}" alt="Alex Smith">
+              </div>
+              <div class="header-titles">
+                {% block perfil %} 
+                  <h2>Alex Smith </h2>
+                  <h4>Web Designerrrr</h4>
+                {% endblock perfil %}
+              </div>
+            </div>
+
+            <ul class="main-menu">
+              <li class="active">
+                <a href="#home" class="nav-anim active">
+                  
+                  <span class="menu-icon lnr lnr-home"></span>
+                  <span class="link-text">Inicio</span>
+                </a>
+              </li>
+              <li>
+                <a href="#about-me" class="nav-anim">
+                  <span class="menu-icon lnr lnr-user"></span>
+                  <span class="link-text">Acerca de mi</span>
+                </a>
+              </li>
+              <li>
+                <a href="#resume" class="nav-anim">
+                  <span class="menu-icon lnr lnr-graduation-hat"></span>
+                  <span class="link-text">Resumen</span>
+                </a>
+              </li>
+              <li>
+                <a href="#portfolio" class="nav-anim">
+                  <span class="menu-icon lnr lnr-briefcase"></span>
+                  <span class="link-text">Portafolio</span>
+                </a>
+              </li>
+              {% comment %} <li>
+                <a href="#blog" class="nav-anim">
+                  <span class="menu-icon lnr lnr-book"></span>
+                  <span class="link-text">Blog</span>
+                </a>
+              </li> {% endcomment %}
+              <li>
+                <a href="#contact" class="nav-anim">
+                  <span class="menu-icon lnr lnr-envelope"></span>
+                  <span class="link-text">Contacto</span>
+                </a>
+              </li>
+            </ul>
+
+            <div class="social-links">
+              <ul>
+                <li><a href="index.html#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="index.html#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="index.html#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+              </ul>
+            </div>
+
+            <div class="header-buttons">
+              {% block descargar %}
+                <a href="index.html#" target="_blank" class="btn btn-primary">Descargar CV</a>
+              {% endblock descargar %}
+            </div>
+
+            <div class="copyrights">© 2023 Todos los derechos reservados.</div>
+          </header>
+
+          <!-- Mobile Navigation -->
+          <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <!-- End Mobile Navigation -->
+
+          <!-- Arrows Nav -->
+          <div class="lmpixels-arrows-nav">
+            <div class="lmpixels-arrow-right"><i class="lnr lnr-chevron-right"></i></div>
+            <div class="lmpixels-arrow-left"><i class="lnr lnr-chevron-left"></i></div>
+          </div>
+          <!-- End Arrows Nav -->
+
+
+          <div class="content-area">
+            <div class="animated-sections">
+              <!-- Home Subpage -->
+              <section data-id="home" class="animated-section start-page ps ps--theme_default section-active" data-ps-id="3e9e9f90-fc88-08ad-e632-2efada4e64b3">
+                <div class="section-content vcentered">
+
+                    <div class="row">
+                      <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="title-block">
+                          {% block portada %}<h2>Alex Smith</h2>
+                            <div class="owl-carousel text-rotation owl-loaded owl-drag">                                    
+                              
+                              
+                              
+                                  <div class="owl-stage-outer">
+                                    <div class="owl-stage" style="transform: translate3d(-1500px, 0px, 0px); transition: all 0s ease 0s; width: 4500px;">
+                                      
+                                      <div class="owl-item cloned" style="width: 750px;">
+                                        <div class="item">
+                                        <div class="sp-subtitle"></div>
+                                        </div>
+                                      </div>                               
+
+                                      <div class="owl-item active" style="width: 750px;">
+                                        <div class="item">
+                                          <div class="sp-subtitle"></div>
+                                        </div>
+                                      </div>                                  
+
+                                      <div class="owl-item cloned" style="width: 750px;">
+                                        <div class="item">
+                                          <div class="sp-subtitle">Ingenieria de Sistemas</div>
+                                        </div>
+                                      </div>
+
+                                    </div>
+                                  </div>
+
+                              <div class="owl-nav disabled"><div class="owl-prev">prev</div><div class="owl-next">next</div></div><div class="owl-dots disabled"></div></div>
+                            </div>
+
+                          {% endblock portada %}
+
+                      </div>
+                    </div>
+
+                </div>
+              <div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__scrollbar-y-rail" style="top: 0px; right: 0px;"><div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></section>
+              <!-- End of Home Subpage -->
+
+              <!-- About Me Subpage -->
+              <section data-id="about-me" class="animated-section ps ps--theme_default ps--active-y" data-ps-id="6087b4c7-1f30-e584-6047-897c6bf90018">
+                <div class="page-title">
+                  <h2>Acerca <span>de mi</span></h2>
+                </div>
+
+                <div class="section-content">
+                  <!-- Personal Information -->
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-7">
+                      {% block acerca %}
+                        <p>Proin volutpat mauris ac pellentesque pharetra. Suspendisse congue elit vel odio suscipit, sit amet tempor nisl imperdiet. Quisque ex justo, faucibus ut mi in, condimentum finibus dolor. Aliquam vitae hendrerit dolor, eget imperdiet mauris. Maecenas et ante id ipsum condimentum dictum et vel massa. Ut in imperdiet dolor, vel consectetur dui.</p>
+                      {% endblock acerca %}
+                    </div>
+
+                    <div class="col-xs-12 col-sm-5">
+                      <div class="info-list">
+                        <ul>
+                          {% block informacion %}
+                          <li>
+                            <span class="title">Age</span>
+                            <span class="value">32</span>
+                          </li>
+
+                          <li>
+                            <span class="title">Residence</span>
+                            <span class="value">USA</span>
+                          </li>
+
+                          <li>
+                            <span class="title">Address</span>
+                            <span class="value">88 Some Street, Some Town</span>
+                          </li>
+
+                          <li>
+                            <span class="title">e-mail</span>
+                            <span class="value">email@example.com</span>
+                          </li>
+
+                          <li>
+                            <span class="title">Phone</span>
+                            <span class="value">+0123 123 456 789</span>
+                          </li>
+                          {% endblock informacion %}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End of Personal Information -->
+
+                  <div class="white-space-50"></div>
+
+                  <!-- Services -->
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12">
+                      <div class="block-title">
+                        <h3>Que trabajos <span>hago</span></h3>
+                      </div>
+                    </div>
+                  </div>
+                  {% block trabajos %}
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-6">
+                        <div class="col-inner">
+                          <div class="info-list-w-icon">
+                            <div class="info-block-w-icon">
+                              <div class="ci-icon">
+                                <i class="lnr lnr-store"></i>
+                              </div>
+                              <div class="ci-text">
+                                <h4>Ecommerce</h4>
+                                <p>Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor bibendum massa, sit amet ultricies ex lectus scelerisque nibh. Ut non sodales.</p>
+                              </div>
+                            </div>
+                            <div class="info-block-w-icon">
+                              <div class="ci-icon">
+                                <i class="lnr lnr-laptop-phone"></i>
+                              </div><div class="ci-text">                              
+                                <h4>Desarrollo Web</h4>
+                                <p>Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor bibendum massa, sit amet ultricies ex lectus scelerisque nibh. Ut non sodales.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-xs-12 col-sm-6">
+                        <div class="col-inner">
+                          <div class="info-list-w-icon">
+                            <div class="info-block-w-icon">
+                              <div class="ci-icon">
+                                <i class="lnr lnr-pencil"></i>
+                              </div>
+                              <div class="ci-text">
+                                <h4>Copywriting</h4>
+                                <p>Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor bibendum massa, sit amet ultricies ex lectus scelerisque nibh. Ut non sodales.</p>
+                              </div>
+                            </div>
+                            <div class="info-block-w-icon">
+                              <div class="ci-icon">
+                                <i class="lnr lnr-flag"></i>
+                              </div><div class="ci-text">
+                                <h4>Management</h4>
+                                <p>Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor bibendum massa, sit amet ultricies ex lectus scelerisque nibh. Ut non sodales.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  {% endblock trabajos %}
+                    <!-- End of Services -->         
+
+                  <div class="white-space-50"></div>
+
+                  <!-- Fun Facts -->
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12">
+
+                      <div class="block-title">
+                        <h3>Divertidos <span>hechos</span></h3>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                      <div class="fun-fact gray-default">
+                        <i class="lnr lnr-heart"></i>
+                        <h4>Clientes Felices</h4>
+                      
+                      </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-4">
+                      <div class="fun-fact gray-default">
+                        <i class="lnr lnr-clock"></i>
+                        <h4>Horas de trabajo</h4>
+                        
+                      </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-4 ">
+                      <div class="fun-fact gray-default">
+                        <i class="lnr lnr-star"></i>
+                        <h4>Paciencia estelar</h4>
+                      
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End of Fun Facts -->
+
+                </div>
+              <div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__scrollbar-y-rail" style="top: 0px; height: 740px; right: 0px;"><div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 316px;"></div></div></section>
+              <!-- End of About Me Subpage -->
+
+              <!-- Resume Subpage -->
+              <section data-id="resume" class="animated-section ps ps--theme_default ps--active-y" data-ps-id="af2810d8-72f8-e6c5-1a4d-50b636ad00cf">
+                <div class="page-title">
+                  <h2>Resumen</h2>
+                </div>
+
+                <div class="section-content">
+
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-7">
+                      
+                      
+                        <div class="block-title">
+                          <h3>Educacion</h3>
+                        </div>
+                      
+                        <div class="timeline timeline-second-style clearfix">
+                          {% block educacion %}
+                            <div class="timeline-item clearfix">
+                              <div class="left-part">
+                                <h5 class="item-period">2008</h5>
+                                <span class="item-company">University of Studies</span>
+                              </div>
+                              <div class="divider"></div>
+                              <div class="right-part">
+                                <h4 class="item-title">Frontend Development</h4>
+                                <p>Maecenas finibus nec sem ut imperdiet. Ut tincidunt est ac dolor aliquam sodales. Phasellus sed mauris hendrerit, laoreet sem in, lobortis ante.</p>
+                              </div>
+                            </div>
+                          {% endblock educacion %}                      
+
+                        </div>
+                        <div class="white-space-50"> 
+
+                        </div>
+                       
+
+                      <div class="block-title">
+                        <h3>Experiencia</h3>
+                      </div>
+
+                      <div class="timeline timeline-second-style clearfix">
+                        {% block experiencia %}
+                          <div class="timeline-item clearfix">
+                            <div class="left-part">
+                              <h5 class="item-period">2016 - Current</h5>
+                              <span class="item-company">Google</span>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="right-part">
+                              <h4 class="item-title">Lead Ui/Ux Designer</h4>
+                              <p>Praesent dignissim sollicitudin justo, sed elementum quam lacinia quis. Phasellus eleifend tristique posuere. Sed vitae dui nec magna.</p>
+                            </div>
+                          </div>
+
+                          <div class="timeline-item clearfix">
+                            <div class="left-part">
+                              <h5 class="item-period">2013 - 2016</h5>
+                              <span class="item-company">Adobe</span>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="right-part">
+                              <h4 class="item-title">Senior Ui/Ux Designer</h4>
+                              <p>Maecenas tempus faucibus rutrum. Duis eu aliquam urna. Proin vitae nulla tristique, ornare felis id, congue libero. Nam volutpat euismod quam.</p>
+                            </div>
+                          </div>
+                          
+                          <div class="timeline-item clearfix">
+                            <div class="left-part">
+                              <h5 class="item-period">2011 - 2013</h5>
+                              <span class="item-company">Google</span>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="right-part">
+                              <h4 class="item-title">Junior Ui/Ux Designer</h4>
+                              <p>Duis mollis nunc quis quam viverra venenatis. Nulla nulla arcu, congue vitae nunc ac, sodales ultricies diam. Nullam justo leo, tincidunt sit amet.</p>
+                            </div>
+                          </div>
+                        {% endblock experiencia %}
+                      </div>
+
+                    </div>
+
+                    <!-- Skills & Certificates -->
+                    <div class="col-xs-12 col-sm-5">
+                      <!-- Design Skills -->
+                      <div class="block-title">
+                        <h3>Software <span>Habilidades</span></h3>
+                      </div>
+
+                      <div class="skills-info skills-second-style">
+                        {% block habilidad %}
+                          <!-- Skill 1 -->
+                          <div class="skill clearfix">
+                            <h4>Web Design</h4>
+                            <div class="skill-value">50%</div>
+                          </div>
+                                                
+                          <div class="skill-container skill-1">
+                            <div class="skill-percentage"></div>
+                          </div> 
+                          <!-- End of Skill 1 -->
+                          
+                          <!-- Skill 2 -->
+                          <div class="skill clearfix">
+                            <h4>Print Design</h4>
+                            <div class="skill-value">10%</div>
+                          </div>
+                          <div class="skill-container skill-2">
+                            <div class="skill-percentage"></div>
+                          </div>
+                          <!-- End of Skill 2 -->
+                       {% endblock habilidad %}
+                       
+
+                      </div>
+                      <!-- End of Design Skills -->
+
+                      <div class="white-space-10"></div>
+
+                      <!-- Coding Skills -->
+                      <div class="block-title">
+                        <h3>Programacion <span>Habilidades</span></h3>
+                      </div>
+
+                      <div class="skills-info skills-second-style">
+                        {% block lenguajes %}
+                          <!-- Skill 5 -->
+                          <div class="skill clearfix">
+                            <h4>JavaScript</h4>
+                            <div class="skill-value">95%</div>
+                          </div>
+                          <div class="skill-container skill-5">
+                            <div class="skill-percentage"></div>
+                          </div>
+                          <!-- End of Skill 5 -->
+                          <!-- Skill 6 -->
+                          <div class="skill clearfix">
+                            <h4>PHP</h4>
+                            <div class="skill-value">85%</div>
+                          </div>
+                          <div class="skill-container skill-6">
+                            <div class="skill-percentage"></div>
+                          </div>
+                          <!-- End of Skill 6 -->
+                        {% endblock lenguajes %}                      
+                        
+                      </div>
+                      <!-- End of Coding Skills -->
+
+                      <div class="white-space-10"></div>
+
+                      <!-- Knowledges -->
+                      <div class="block-title">
+                        <h3>Conocimientos</h3>
+                      </div>
+                      <ul class="knowledges">
+                          {% block conocimiento %}
+                          <li>Marketing</li>
+                          <li>Print</li>
+                          <li>Digital Design</li>
+                          <li>Social Media</li>
+                          <li>Time Management</li>
+                          <li>Communication</li>
+                          <li>Problem-Solving</li>
+                          <li>Social Networking</li>
+                          <li>Flexibility</li>
+                          {% endblock conocimiento %}
+                        </ul>
+                      <!-- End of Knowledges -->
+                    </div>
+                    <!-- End of Skills & Certificates -->
+                  </div>
+
+                  <div class="white-space-50"></div>
+
+                  <!-- Certificates -->
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12">
+                      <div class="block-title">
+                        <h3>Certificados</h3>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <!-- Certificate 1 -->
+                    {% block certificados %}
+                      <div class="col-xs-12 col-sm-6">
+                        <div class="certificate-item clearfix">
+                          <div class="certi-logo">
+                            <img src="images/client-1.png" alt="logo">
+                          </div>
+                          
+                          <div class="certi-content">
+                            <div class="certi-title">
+                              <h4>Psyhology of Intertnation Design</h4>
+                            </div>
+                            <div class="certi-id">
+                              <span>Membership ID: XXXX</span>
+                            </div>
+                            <div class="certi-date">
+                              <span>19 April 2018</span>
+                            </div>
+                            <div class="certi-company">
+                              <span></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- End of Certificate 1 -->
+
+                      <!-- Certificate 2 -->
+                      <div class="col-xs-12 col-sm-6">
+                        <div class="certificate-item clearfix">
+                          <div class="certi-logo">
+                            <img src="images/client-1.png" alt="logo">
+                          </div>
+                          
+                          <div class="certi-content">
+                            <div class="certi-title">
+                              <h4>Psyhology of Intertnation Design</h4>
+                            </div>
+                            <div class="certi-id">
+                              <span>Membership ID: XXXX</span>
+                            </div>
+                            <div class="certi-date">
+                              <span>19 April 2018</span>
+                            </div>
+                            <div class="certi-company">
+                              <span></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End of Certificate 2 -->
+                    {% endblock certificados %}
+
+                  </div>
+                  <!-- End of Certificates -->
+                </div>
+              <div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__scrollbar-y-rail" style="top: 0px; height: 740px; right: 0px;"><div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 443px;"></div></div></section>
+              <!-- End of Resume Subpage -->
+
+              <!-- Portfolio Subpage -->
+              <section data-id="portfolio" class="animated-section ps ps--theme_default ps--active-y" data-ps-id="ecccb427-e830-f933-0e42-291733b13ed8">
+                <div class="page-title">
+                  <h2>Portafolio</h2>
+                </div>
+
+                <div class="section-content">
+
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12">
+                      <!-- Portfolio Content -->
+                      <div class="portfolio-content">
+
+                        <ul class="portfolio-filters">
+                          <li class="active">
+                            <a class="filter btn btn-sm btn-link" data-group="">Todo</a>
+                          </li>                
+                        </ul>
+
+                        <!-- Portfolio Grid -->
+                        <div class="portfolio-grid three-columns shuffle" style="position: relative; overflow: hidden; height: 638.812px; transition: height 450ms ease-out 0s;">
+                          {% block portafolio %}
+                              <figure class="item lbaudio shuffle-item filtered" style="position: absolute; top: 0px; left: 0px; visibility: visible; transition: transform 450ms ease-out 0s, opacity 450ms ease-out 0s;">
+                                <div class="portfolio-item-img">
+                                  <img src="'images/1.jpg'" alt="SoundCloud Audio" title="">
+                                  <a href="#" class="lightbox mfp-iframe" title="SoundCloud Audio"></a>
+                                </div>
+
+                                <i class="fa fa-volume-up"></i>
+                                <h4 class="name">SoundCloud Audio</h4>
+                                <span class="category">SoundCloud</span>
+                              </figure>
+
+                              
+                            {% endblock portafolio %}
+                        </div>
+                      </div>
+                      <!-- End of Portfolio Content -->
+                    </div>
+                  </div>
+                </div>
+              <div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__scrollbar-y-rail" style="top: 0px; height: 740px; right: 0px;"><div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 669px;"></div></div></section>
+              <!-- End of Portfolio Subpage -->
+
+           <!-- ESPACIO PARA BLOG -->           
+
+              <!-- Contact Subpage -->
+              <section data-id="contact" class="animated-section ps ps--theme_default" data-ps-id="ded0b596-cf00-1685-bcc9-b38ce5bd570d">
+                <div class="page-title">
+                  <h2>Contacto</h2>
+                </div>
+
+                <div class="section-content">
+
+                  <div class="row">
+                  
+                    <!-- Contact Info -->
+                    <div class="col-xs-12 col-sm-4">
+                      {% block contacto %}
+                        <div class="lm-info-block gray-default">
+                          <i class="lnr lnr-map-marker"></i>
+                          <h4>San Francisco</h4>
+                          <span class="lm-info-block-value"></span>
+                          <span class="lm-info-block-text"></span>
+                        </div>
+
+                        <div class="lm-info-block gray-default">
+                          <i class="lnr lnr-phone-handset"></i>
+                          <h4>415-832-2000</h4>
+                          <span class="lm-info-block-value"></span>
+                          <span class="lm-info-block-text"></span>
+                        </div>
+
+                        <div class="lm-info-block gray-default">
+                          <i class="lnr lnr-envelope"></i>
+                          <h4>alex@example.com</h4>
+                          <span class="lm-info-block-value"></span>
+                          <span class="lm-info-block-text"></span>
+                        </div>
+
+                        <div class="lm-info-block gray-default">
+                          <i class="lnr lnr-checkmark-circle"></i>
+                          <h4>Freelance Available</h4>
+                          <span class="lm-info-block-value"></span>
+                          <span class="lm-info-block-text"></span>
+                        </div>
+                      {% endblock contacto %}
+
+
+                    </div>
+                    <!-- End of Contact Info -->
+
+                    <!-- Contact Form -->
+                    <div class="col-xs-12 col-sm-8">
+                      <div id="map" class="map">
+                          <div class="lmpixels-map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d368.72327119014136!2d-68.11241672212502!3d-16.50594291383953!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sbo!4v1687636704717!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                          
+                          </div>
+                      </div>
+                      <div class="block-title">
+                        <h3>Como puedo <span>Ayudarte?</span></h3>
+                      </div>
+                          {% block formulario_contacto %}
+
+                            <form id="contact_form" class="contact-form" action="" method="post" novalidate="true">
+
+                              <div class="messages"></div>
+
+                              <div class="controls two-columns">
+                                <div class="fields clearfix">
+                                  <div class="left-column">
+                                    <div class="form-group form-group-with-icon">
+                                      <input id="form_name" type="text" name="name" class="form-control" placeholder="" required="required" data-error="Nombre requerido.">
+                                      <label>Nombre</label>
+                                      <div class="form-control-border"></div>
+                                      <div class="help-block with-errors"></div>
+                                    </div>
+
+                                    <div class="form-group form-group-with-icon">
+                                      <input id="form_email" type="email" name="email" class="form-control" placeholder="" required="required" data-error="Correo requerido">
+                                      <label>Correo</label>
+                                      <div class="form-control-border"></div>
+                                      <div class="help-block with-errors"></div>
+                                    </div>
+
+                                    <div class="form-group form-group-with-icon">
+                                      <input id="form_subject" type="text" name="subject" class="form-control" placeholder="" required="required" data-error="Asunto es requerido.">
+                                      <label>Asunto</label>
+                                      <div class="form-control-border"></div>
+                                      <div class="help-block with-errors"></div>
+                                    </div>
+                                  </div>
+                                  <div class="right-column">
+                                    <div class="form-group form-group-with-icon">
+                                      <textarea id="form_message" name="message" class="form-control" placeholder="" rows="7" required="required" data-error="Porfavor ingresa un Mensaje"></textarea>
+                                      <label>Mensaje</label>
+                                      <div class="form-control-border"></div>
+                                      <div class="help-block with-errors"></div>
+                                    </div>
+                                  </div>
+                                </div>                          
+                                <input type="submit" class="button btn-send disabled" value="Enviar mensaje">
+                              </div>
+                            </form>
+                          {% endblock formulario_contacto %}
+                      </div>
+                    <!-- End of Contact Form -->
+                  </div>
+
+                </div>
+              <div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__scrollbar-y-rail" style="top: 0px; right: 0px;"><div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></section>
+              <!-- End of Contact Subpage -->
+            </div>
+          </div>
+
+      </div>
+    </div>
+
+    <script src="{% static 'js/jquery-2.1.3.min.js' %}"></script>
+    <script src="{% static 'js/modernizr.custom.js' %}"></script>
+    <script src="{% static 'js/animating.js' %}"></script>
+
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/api.js' %}"></script>
+
+    <script src="{% static 'js/perfect-scrollbar.min.js' %}"></script>
+    <script src="{% static 'js/jquery.shuffle.min.js' %}"></script>
+    <script src="{% static 'js/masonry.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+
+    <script src="{% static 'js/validator.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+   
+</body></html>
