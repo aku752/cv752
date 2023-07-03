@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import (Usuario, Educacion, Habilidad,Lenguaje, 
                      Experiencia, Conocimiento, Certificado,
-                     Trabajo, Acerca, Portafolio)
+                     Acerca, Portafolio)
 from django.conf import settings
 from django.contrib import messages
 from django.template.loader import get_template
@@ -31,13 +31,7 @@ def index(request):
     lenguaje = Lenguaje.objects.all()
     experiencia = Experiencia.objects.order_by('epoca')
     conocimiento = Conocimiento.objects.all()
-    certificado = Certificado.objects.all()
-    servicios = Trabajo.objects.all()
-    trabajo0= servicios[0]
-    trabajo1= servicios[1]  
-    trabajo2= servicios[2]
-    trabajo3= servicios[3]  
-   
+    certificado = Certificado.objects.all()   
     acerca = Acerca.objects.all()
     portafolio = Portafolio.objects.all()
     if request.method == "POST":
@@ -56,11 +50,7 @@ def index(request):
                                           'lenguajes':lenguaje,
                                           'experiencias':experiencia,
                                           'conocimientos':conocimiento,
-                                          'certificados':certificado,
-                                          'trabajo0':trabajo0,                                    
-                                          'trabajo1':trabajo1,                                                                     
-                                          'trabajo2':trabajo2,                                    
-                                          'trabajo3':trabajo3,                                                                     
+                                          'certificados':certificado,                                                                                                        
                                           'acercas':acerca,
                                           'portafolios':portafolio})
 
