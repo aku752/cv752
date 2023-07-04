@@ -8,17 +8,19 @@ from django.template.loader import get_template
 from django.core.mail import EmailMultiAlternatives
 # Create your views here.
 
-def enviar_email(nombre, asunto, mensaje,correo):
+def enviar_email(nombre, asunto, mensaje, correo):
     context={'nombre':nombre,
              'asunto':asunto,
              'mensaje':mensaje,
-             'correo':correo}
+             'correo':correo
+             }
     template= get_template('correo.html')
     content = template.render(context)
     correo = EmailMultiAlternatives(
-        'Un correo de prueba',     
+        'Un correo de prueba', 
+        'Curriculum',    
         settings.EMAIL_HOST_USER,
-        [nombre,asunto,mensaje,correo]
+        [nombre, asunto, mensaje, correo]
     )
     correo.attach_alternative(content,'text/html')
     correo.send()
@@ -38,8 +40,7 @@ def index(request):
         correo= settings.EMAIL_HOST_USER
         nombre = request.POST.get('nombre')  
         asunto = request.POST.get('asunto')  
-        mensaje = request.POST.get('mensaje')
-     
+        mensaje = request.POST.get('mensaje')     
         enviar_email(nombre,asunto,mensaje,correo)
         messages.success(request, 'Mensaje enviado')
 
