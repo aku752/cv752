@@ -6,7 +6,7 @@
 {% block perfil %}
    
     {% for usuario in usuarios %}
-        <h3>{{ usuario.nombre }}</h3>
+        <h3>{{ usuario.nombre }} {{ usuario.paterno }} {{ usuario.materno }}</h3>
         </h4>{{ usuario.profesion }}</h4>
     {% endfor %}
 {% endblock perfil %}
