@@ -75,7 +75,9 @@ class Educacion(models.Model):
 #------------------------------------------------
 
 class Usuario(models.Model):
-    nombre= models.CharField(max_length=200)    
+    nombre = models.CharField(max_length=200)
+    paterno = models.CharField(max_length=200)    
+    materno = models.CharField(max_length=200)    
     direccion=models.CharField(max_length=200)
     correo= models.EmailField(max_length=200)
     telefono=models.CharField(max_length=50)
