@@ -74,6 +74,24 @@
       
     {% endfor %}
 {% endblock educacion %}
+
+{% block trabajos %}
+    {% for trabajo in trabajos %}        
+        <div class="blanco-icono">
+            {% comment %} <img src="images/client-1.png" alt="logo"> {% endcomment %}
+            <img src="{{ trabajo.icono.url }}" alt="logo" color="white">
+        </div>
+        <div class="ci-text">
+            <h4>{{ trabajo.trabajo }}</h4>
+            <p>{{ trabajo.descripcion }}</p>
+        </div>
+    {% endfor %}
+
+
+
+{% endblock trabajos %}
+
+
 {% block habilidad %}
    {% for habilidad in habilidades %}
         <div class="skill clearfix">

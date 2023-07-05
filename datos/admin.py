@@ -1,10 +1,20 @@
 from django.contrib import admin
 from .models import (Usuario, Lenguaje, Habilidad, Experiencia, Conocimiento,
-                     Educacion, Certificado, Acerca, Portafolio)
+                     Educacion, Certificado, Acerca, Portafolio, Trabajo)
 admin.site.site_header="CURRICULUM ADMIN"
 admin.site.site_title="Portal del Curriculum"
 admin.site.index_title="Bienvenidos al portal de administracion"
 # Register your models here.
+class TrabajoAdmin(admin.ModelAdmin):
+    list_display = ('trabajo','descripcion','icono','estado')
+    list_filter = ('trabajo','descripcion','icono','estado')
+    search_fields = ('trabajo','descripcion','icono','estado')
+    ordering = ('trabajo','descripcion','icono','estado')
+    list_editable =('estado',)
+    list_per_page = 10
+
+admin.site.register(Trabajo, TrabajoAdmin)
+
 class PortafolioAdmin(admin.ModelAdmin):
     list_display = ('portafolio','imagen','tipo','estado')
     list_filter = ('portafolio','imagen','tipo','estado')

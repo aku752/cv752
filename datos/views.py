@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import (Usuario, Educacion, Habilidad,Lenguaje, 
                      Experiencia, Conocimiento, Certificado,
-                     Acerca, Portafolio)
+                     Acerca, Portafolio, Trabajo)
 from django.conf import settings
 from django.contrib import messages
 from django.template.loader import get_template
@@ -28,7 +28,7 @@ def enviar_email(nombre, asunto, mensaje, correo):
 
 def index(request):
     usuario = Usuario.objects.all()
-    educacion=  Educacion.objects.all() 
+    educacion=  Educacion.objects.order_by('epoca') 
     habilidad= Habilidad.objects.all() 
     lenguaje = Lenguaje.objects.all()
     experiencia = Experiencia.objects.order_by('epoca')
@@ -36,6 +36,7 @@ def index(request):
     certificado = Certificado.objects.all()   
     acerca = Acerca.objects.all()
     portafolio = Portafolio.objects.all()
+    trabajo = Trabajo.objects.all()
     if request.method == "POST":
         correo= settings.EMAIL_HOST_USER
         nombre = request.POST.get('nombre')  
@@ -53,7 +54,8 @@ def index(request):
                                           'conocimientos':conocimiento,
                                           'certificados':certificado,                                                                                                        
                                           'acercas':acerca,
-                                          'portafolios':portafolio})
+                                          'portafolios':portafolio,
+                                          'trabajos':trabajo})
 
  
     
