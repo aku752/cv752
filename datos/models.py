@@ -31,6 +31,7 @@ class Certificado(models.Model):
     epoca= models.CharField(max_length=10)
     imagen = models.ImageField(upload_to='certificado', null=True, blank=True)
     descripcion = models.CharField(max_length=20)
+    archivo = models.FileField(upload_to='archivo', blank=True, null=True)
     estado = models.BooleanField(default=True)
     def __str__(self):
         return "{}".format(self.certificado)
