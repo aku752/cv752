@@ -6,7 +6,14 @@ from django.conf import settings
 from django.contrib import messages
 from django.template.loader import get_template
 from django.core.mail import EmailMultiAlternatives
+
+from django.http import FileResponse
 # Create your views here.
+def ver_pdf(request, id):
+    certificado = Certificado.objects.get(id=id)
+    return FileResponse(certificado.archivo, content_type='application/pdf')
+
+
 
 def enviar_email(nombre, asunto, mensaje, correo):
     context={'nombre':nombre,
@@ -64,8 +71,7 @@ def index(request):
                                           'rutas_pdf':rutas_pdf,
                                           'trabajos':trabajo})
 
-def portafolio(request):
-    return render(request, 'portafolio.html',{})
+
  
     
     

@@ -30,21 +30,39 @@ ALLOWED_HOSTS = ['sable752.pythonanywhere.com','*']
 
 
 # Application definition
-if DEBUG:
-    print("ESTA EN TRUE")
-else:
-    print("ESTA EN FALSE")
-
 INSTALLED_APPS = [
-    #'whitenoise.runserver_nostatic',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'datos',
-]
+        config('WHITENOISE', default=''),
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+        'datos',
+    ]
+
+# if DEBUG == True: 
+#     INSTALLED_APPS = [
+#         'whitenoise.runserver_nostatic',
+#         'django.contrib.admin',
+#         'django.contrib.auth',
+#         'django.contrib.contenttypes',
+#         'django.contrib.sessions',
+#         'django.contrib.messages',
+#         'django.contrib.staticfiles',
+#         'datos',
+#     ]
+# else:
+#     INSTALLED_APPS = [        
+#         'django.contrib.admin',
+#         'django.contrib.auth',
+#         'django.contrib.contenttypes',
+#         'django.contrib.sessions',
+#         'django.contrib.messages',
+#         'django.contrib.staticfiles',
+#         'datos',
+#     ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

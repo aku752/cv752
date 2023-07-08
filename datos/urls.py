@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import index, portafolio
+from .views import index, ver_pdf
 
 urlpatterns = [
     path('', index, name='index'),
-    path('portafolio/',portafolio,name='portafolio') 
+    path('ver_pdf/<int:id>/', ver_pdf, name='verpdf') 
 ]

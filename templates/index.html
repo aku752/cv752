@@ -166,9 +166,9 @@
                         <span>{{ certificado.epoca }}</span>
                     </div>
                     <div class="">
-                        {% for ruta in rutas_pdf %}
-                            <a href="{{ ruta }}" class="btn btn-primary btn-sm" target="_blank">Ver PDF</a>
-                        {% endfor %}
+                        
+                            <a href="{% url 'verpdf' certificado.id %}" class="btn btn-primary btn-sm" target="_blank">Ver PDF</a>
+                   
                     
                     </div>
                     <div class="certi-company">
