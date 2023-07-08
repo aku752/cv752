@@ -30,6 +30,10 @@ ALLOWED_HOSTS = ['sable752.pythonanywhere.com','*']
 
 
 # Application definition
+if DEBUG:
+    print("ESTA EN TRUE")
+else:
+    print("ESTA EN FALSE")
 
 INSTALLED_APPS = [
     #'whitenoise.runserver_nostatic',

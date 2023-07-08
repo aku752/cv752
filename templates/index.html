@@ -147,32 +147,34 @@
 {% endblock conocimiento %}
 
 {% block certificados %}
+  
     {% for certificado in certificados %}
         <div class="col-xs-12 col-sm-6">
             <div class="certificate-item clearfix">
-            <div class="certi-logo">
-                {% comment %} <img src="images/client-1.png" alt="logo"> {% endcomment %}
-                <img src="{{ certificado.imagen.url }}" alt="logo">
-            </div>
-            
-            <div class="certi-content">
-                <div class="certi-title">
-                <h4>{{ certificado.certificado }}</h4>
+                <div class="certi-logo">           
+                    <img src="{{ certificado.imagen.url }}" alt="logo">
                 </div>
-                <div class="certi-id">
-                <span>{{ certificado.descripcion }}</span>
+                
+                <div class="certi-content">
+                    <div class="certi-title">
+                        <h4>{{ certificado.certificado }}</h4>
+                    </div>
+                    <div class="certi-id">
+                        <span>{{ certificado.descripcion }}</span>
+                    </div>
+                    <div class="certi-date">
+                        <span>{{ certificado.epoca }}</span>
+                    </div>
+                    <div class="">
+                        {% for ruta in rutas_pdf %}
+                            <a href="{{ ruta }}" class="btn btn-primary btn-sm" target="_blank">Ver PDF</a>
+                        {% endfor %}
+                    
+                    </div>
+                    <div class="certi-company">
+                        <span></span>
+                    </div>
                 </div>
-                <div class="certi-date">
-                <span>{{ certificado.epoca }}</span>
-                </div>
-                <div class="">
-                <a href="{{ certificado.archivo.url }}" class="btn btn-primary btn-sm" target="_blank">Ver PDF</a>
-             
-                </div>
-                <div class="certi-company">
-                <span></span>
-                </div>
-            </div>
             </div>
         </div>
     {% endfor %}

@@ -37,6 +37,12 @@ def index(request):
     acerca = Acerca.objects.all()
     portafolio = Portafolio.objects.all()
     trabajo = Trabajo.objects.all()
+
+    objetos_pdf = certificado
+
+    rutas_pdf = [objeto.archivo.url for objeto in objetos_pdf]
+
+
     if request.method == "POST":
         correo= settings.EMAIL_HOST_USER
         nombre = request.POST.get('nombre')  
@@ -55,6 +61,7 @@ def index(request):
                                           'certificados':certificado,                                                                                                        
                                           'acercas':acerca,
                                           'portafolios':portafolio,
+                                          'rutas_pdf':rutas_pdf,
                                           'trabajos':trabajo})
 
 def portafolio(request):
