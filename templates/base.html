@@ -35,6 +35,7 @@
         - perfil
         - nombre-->
   <body>
+      {% block contenido %}
     <!-- Animated Background -->
     <div class="lm-animated-bg" style="background-image: url(&quot;{% static 'images/main_bg.png' %}&quot;); background-position: calc(50% + -0.38145px) calc(50% + 1.56615px);"></div>
     <!-- /Animated Background -->
@@ -729,6 +730,7 @@
 
       </div>
     </div>
+    {% endblock contenido %}
 
     <script src="{% static 'js/jquery-2.1.3.min.js' %}"></script>
     <script src="{% static 'js/modernizr.custom.js' %}"></script>

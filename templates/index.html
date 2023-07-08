@@ -345,13 +345,20 @@
     {% for portafolio in portafolios %}
         <figure class="item lbaudio shuffle-item filtered" style="position: absolute; top: 0px; left: 0px; visibility: visible; transition: transform 450ms ease-out 0s, opacity 450ms ease-out 0s;">
             <div class="portfolio-item-img">
-                <img src="{{ portafolio.imagen.url }}" alt="SoundCloud Audio" title="">
-                <a href="{{ portafolio.ruta }}" class="lightbox mfp-iframe" title="Websonline"></a>
+                <img src="{{ portafolio.imagen.url }}" title="">
+                <a class="lightbox"href="{{ portafolio.imagen.url }}" target="_blank" title="Websonline"></a>
+              
             </div>
 
-            <i class="fa fa-volume-up"></i>
-            <h4 class="name">{{ portafolio.portafolio }}</h4>
+            <i class="far fa-image"></i>
+            <h4 class="name">{{ portafolio.portafolio }}</h4>       
+            <a class="name" href="{{ portafolio.ruta }}"> Ir link >> </a>
+            
             <span class="category">{{ portafolio.tipo }}</span>
+            
         </figure>
+      
     {% endfor %}
+   
+
 {% endblock portafolio %}

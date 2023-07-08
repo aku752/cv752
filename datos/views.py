@@ -57,6 +57,8 @@ def index(request):
                                           'portafolios':portafolio,
                                           'trabajos':trabajo})
 
+def portafolio(request):
+    return render(request, 'portafolio.html',{})
  
     
     
