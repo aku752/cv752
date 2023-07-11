@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import index, portafolio
+from .views import index, htmx
 
 urlpatterns = [
     path('', index, name='index'),
-    path('portafolio/',portafolio,name='portafolio') 
+    path('htmx/',htmx,name='htmx') 
 ]
