@@ -24,7 +24,7 @@ def enviar_email(nombre, asunto, mensaje, correo):
     template= get_template('correo.html')
     content = template.render(context)
     correo = EmailMultiAlternatives(
-        'Un correo de prueba', 
+        'Un correo de mi pagina curriculum', 
         'Curriculum',    
         settings.EMAIL_HOST_USER,
         [nombre, asunto, mensaje, correo]
@@ -45,11 +45,6 @@ def index(request):
     portafolio = Portafolio.objects.all()
     trabajo = Trabajo.objects.all()
 
-    objetos_pdf = certificado
-
-    rutas_pdf = [objeto.archivo.url for objeto in objetos_pdf]
-
-
     if request.method == "POST":
         correo= settings.EMAIL_HOST_USER
         nombre = request.POST.get('nombre')  
@@ -68,7 +63,7 @@ def index(request):
                                           'certificados':certificado,                                                                                                        
                                           'acercas':acerca,
                                           'portafolios':portafolio,
-                                          'rutas_pdf':rutas_pdf,
+                                          'certificados':certificado,
                                           'trabajos':trabajo})
 
 
